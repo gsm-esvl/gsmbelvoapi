@@ -1,0 +1,16 @@
+{
+  "name": "gsm-api-fs",
+  "version": "1.0.0",
+  "description": "APi para financial services Belvo",
+  "main": "index.js",
+  "dependencies": {
+    "belvo": "^0.9.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edgar Vargas",
+  "license": "ISC"
+}
