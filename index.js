@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 1337;
 const bodyParser = require('body-parser');
 const moment = require('moment');
 const belvo = require('belvo').default;
@@ -29,18 +29,18 @@ const client = new belvo(
 );
 
 app.get("/token", function (req, res) {
-  client.connect().then(function () {
-    client.widgetToken
-      .create()
-      .then((response) => {
-        res.json(response);
-      })
-      .catch((error) => {
-        res.status(500).send({
-          message: error.message,
-        });
-      });
-  });
+    client.connect().then(function () {
+        client.widgetToken
+            .create()
+            .then((response) => {
+                res.json(response);
+            })
+            .catch((error) => {
+                res.status(500).send({
+                    message: error.message,
+                });
+            });
+    });
 });
 
 // Request an access token to be used when loading the Widget
